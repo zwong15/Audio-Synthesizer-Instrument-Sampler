@@ -1,0 +1,13 @@
+module MultinoteController(
+
+input logic Clk, Reset, sample_clk, init, done1, done2, done3, done4,
+output logic MAR_LD, MDR_LD, 
+output logic select
+
+);
+
+
+
+
+
+endmodule

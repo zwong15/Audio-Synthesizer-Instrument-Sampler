@@ -1,0 +1,96 @@
+module SamplerKeymapper(
+
+input logic [7:0] keyboard_in,
+output logic [19:0] note_addr,
+output logic invalid_note
+
+);
+
+always_comb
+begin
+	case(keyboard_in)
+			
+		256'd43: //Tab
+		begin
+			note_addr = 19'h08c0;//C
+			invalid_note = 1'b0;
+		end
+			
+		256'd20: //Q
+		begin
+			note_addr = 19'h08c0;//Db
+			invalid_note = 1'b0;
+		end
+			
+		256'd26: //W
+		begin
+			note_addr = 19'h08c0;//D
+			invalid_note = 1'b0;
+		end
+			
+		256'd8:  //E
+		begin
+			note_addr = 19'h08c0;//Eb
+			invalid_note = 1'b0;
+		end
+		
+		256'd21: //R
+		begin
+			note_addr = 19'h08c0;//E
+			invalid_note = 1'b0;
+		end
+			
+		256'd23: //T 
+		begin
+			note_addr = 19'h08c0;//F
+			invalid_note = 1'b0;
+		end
+			
+		256'd28: //Y
+		begin
+			note_addr = 19'h08c0;//Gb
+			invalid_note = 1'b0;
+		end
+			
+		256'd24: //U
+		begin
+			note_addr = 19'h08c0;//G
+			invalid_note = 1'b0;
+		end
+			
+		256'd12: //I
+		begin
+			note_addr = 19'h08c0;//Ab
+			invalid_note = 1'b0;
+		end
+			
+		256'd18: //O
+		begin
+			note_addr = 19'h08c0;//A
+			invalid_note = 1'b0;
+		end
+	
+		256'd19: //P
+		begin
+			note_addr = 19'h08c0;//Bb
+			invalid_note = 1'b0;
+		end
+		
+		256'd47: //{
+		begin
+			note_addr = 19'h08c0;//B
+			invalid_note = 1'b0;
+		end
+		
+		default:
+		begin
+			note_addr = 19'h0;  //Eb
+			invalid_note = 1'b1;
+		end
+		
+	endcase
+end
+
+
+
+endmodule

@@ -1,0 +1,28 @@
+module Address_Incrementer(
+
+input logic [19:0] Address,
+input logic new_note, increment, Clk, Reset,
+output logic [19:0] next_Address
+
+);
+
+always_ff @ (posedge Clk)
+begin
+	if(Reset)
+		next_Address <= 19'b0;
+		
+	else
+	begin
+		if(new_note)
+			next_Address <= Address;
+			
+		else if(increment)
+			next_Address <= next_Address + 1;
+			
+		else
+			next_Address <= next_Address;
+	end
+end
+
+
+endmodule

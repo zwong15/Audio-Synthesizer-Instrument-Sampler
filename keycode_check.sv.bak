@@ -1,0 +1,18 @@
+module keycode_check(
+
+input logic Clk, Reset,
+input logic [31:0] keycode,
+output logic [31:0] keycode_adjusted
+
+);
+
+enum logic [2:0] {
+WAIT,
+WAIT_1,
+DAC_WAIT,
+RUN,
+RUN_1
+}   curr_state, next_state;
+
+
+endmodule

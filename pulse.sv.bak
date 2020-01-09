@@ -1,0 +1,11 @@
+module pulse(
+
+input logic  Clk, data,
+output logic out
+
+);
+
+always_ff @ (posedge data)
+	out <= Clk;
+
+endmodule

@@ -1,0 +1,36 @@
+module sample_freq_counter(
+
+input logic Reset, Clk,
+output logic freq_sample
+
+);
+
+//converts 50 MHz clock signal to a 48khz signal
+
+logic [11:0] count;
+
+always_ff @ (posedge Clk)
+begin
+	if(reset)
+		count = 12'b0;
+		freq_sample <= 1'b0;
+		
+	else if((count == 12'd1042) | (count == 12'd2083))	
+		begin
+			count <= count + 1;
+			freq_sample <= 1'b1;
+		end
+		
+	else if(count == 12'd3125)
+		begin
+			count <= 12'b0;
+			freq_sample <= 1'b1
+		end
+	else
+		begin
+			count <= count + 1;
+			freq_sample <= 1'b0;
+		end
+end
+
+endmodule

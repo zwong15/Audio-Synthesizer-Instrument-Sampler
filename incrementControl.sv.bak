@@ -1,0 +1,9 @@
+module incrementControl(
+
+input logic Clk, Reset, new_note, count_done, sample_Clk, 
+output logic Done, count_inc, increment
+
+);
+
+
+

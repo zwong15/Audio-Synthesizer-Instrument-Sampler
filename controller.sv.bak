@@ -1,0 +1,6 @@
+module controller(
+
+input logic init,
+output logic start
+
+);

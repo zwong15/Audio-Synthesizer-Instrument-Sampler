@@ -1,0 +1,10 @@
+module wavetable_synthesizer(
+
+input logic Clk, Reset,
+output logic [15:0] out
+
+);
+
+
+
+endmodule

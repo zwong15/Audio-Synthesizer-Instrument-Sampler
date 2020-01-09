@@ -1,0 +1,16 @@
+module samplerAddressControl(
+
+
+input logic Clk, Reset, init, sample_clk,
+input logic [7:0] keycode,
+output logic [19:0] note_address,
+output logic done
+
+
+);
+
+
+
+
+
+endmodule

@@ -1,0 +1,41 @@
+module SELECTOR(
+
+input logic [19:0] Addr_in,
+input logic [1:0] select,
+output logic [19:0] out1, out2, out3, out4
+
+);
+
+always_comb
+begin
+
+	case(select)
+
+	2'd0:
+	begin
+		out1 = Addr_in;
+		out2 = 20'b0;
+		out3 = 20'b0;
+		out4 = 20'b0;
+	end
+	
+	2'd1:
+	begin
+		out1 = 20'b0;
+		out2 = Addr_in;
+		out3 = 20'b0;
+		out4 = 20'b0;
+	end
+	
+	2'd1:
+	begin
+		out1 = 20'b0;
+		out2 = 20'b0;
+		out3 = Addr_in;
+		out4 = 20'b0;
+	end
+	
+	endcase
+end
+
+endmodule

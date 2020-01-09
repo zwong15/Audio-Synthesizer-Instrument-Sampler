@@ -1,0 +1,29 @@
+module button_select(
+
+input logic Clk, Reset, button, 
+output logic [1:0] function_select
+
+);
+
+
+always_ff @ (posedge Clk)
+begin
+
+if(Reset)
+	function_select <= 2'd0;
+	
+else
+begin
+
+if(button)
+	function_select <= function_select + 2'b01;
+
+if(function_select > 2'd4)
+	function_select <= 2'b0;
+
+end
+
+end
+
+
+endmodule

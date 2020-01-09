@@ -1,0 +1,13 @@
+module audio_interface_plat(
+,
+input wire Clk, Reset, INIT, AUD_DACDAT, AUD_BCLK, AUD_DACLRCK
+output wire data_over, INIT_FINISH, data_over, AUD_MCLK, I2C_SDAT, I2C_SCLK
+
+);
+
+wire [15:0] LDATA, RDATA;
+wire adc_full, AUD_ADCLRCK, AUD_ADCDAT, ADCDATA;
+
+a
+
+endmodule
